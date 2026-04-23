@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "JetBrains";
+  src: url("JetBrainsMono-2.304/fonts/webfonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrainsXBOLD";
+  src: url("JetBrainsMono-2.304/fonts/webfonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+}
+
+
+html {
+  
+ scrollbar-color: limegreen transparent; 
+ 
+  overflow-x: hidden;
+
+}
+
+body {
+  background-color: black;
+  font-family: "JetBrains";
+ display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  scrollbar-color: limegreen transparent; 
+}
+
+a { 
+   z-index: 1; /* devant le canvas */
+  text-decoration: none; 
+  color: limegreen;
+}
+
+.titre {
+   z-index: 1; /* devant le canvas */
+justify-content: center;
+  color: rgb(0, 255, 0);
+  width: 800px ;
+  font-size: 50px;
+   text-align: center;
+  text-shadow: 
+    0 0 1px rgb(0, 255, 0),
+    0 0 3px limegreen,
+    0 0 9px limegreen;
+
+}
+
+.infos {
+   z-index: 1; /* devant le canvas */
+  width: 400px;
+  color: rgb(0, 255, 0);
+  font-size: 10px;
+  line-height: 12.5px;
+  
+  text-align: center;
+  text-shadow: 
+    0 0 1px rgb(0, 255, 0),
+    0 0 3px limegreen,
+    0 0 9px limegreen;
+}
+
+
+   /* Canvas plein écran en arrière-plan */
+  #matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* derrière le texte */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/*SYTÈME DE DÉVOILEMENT DES SENS CACHÉS*/
+
+.container {
+   z-index: 1; /* devant le canvas */
+  width: 100vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  
+
+}
+.track {
+  display: flex;
+  flex-direction: row;
+  width: 150vw; 
+}
+
+.Espace_infos {
+  
+  width: 99vw;              /* occupe tout l’écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Espace_secret {
+  width: 50vw; 
+  justify-content: center;
+   
+  
+}
+
+
+.secret {
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  width: 48vw;
+  border: #62ff00 solid 1px;
+  scrollbar-color: limegreen transparent; 
+
+  font-family: "JetBrainsXBOLD";
+  font-size: 10px;
+  color: rgb(0, 255, 0);
+ 
+ 
+  
+}
+
+
+/*GLITCH*/
+
+.infos_cachette {
+  width: 400px;
+  flex-shrink: 0;
+  font-family: JetBrains;
+  font-size: 10px; 
+  line-height: 11px;
+  text-align: center;
+  color: rgb(0, 255, 0);
+  
+  position: relative;
+  text-shadow: 0.05em 0 0 #62ff00, -0.03em -0.04em 0 #62ff002f,
+    0.025em 0.04em 0 #62ff0088;
+  animation: glitch 725ms infinite;
+}
+
+.infos_cachette span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.infos_cachette span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.1em, -0.1em);
+  opacity: 0.75;
+}
+
+.infos_cachette span:last-child {
+  animation: glitch 600ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #62ff00, -0.5em -0.01em 0 #62ff002f,
+      0.025em 0.04em 0 #62ff0088;
+  }
+  15% {
+    
+    text-shadow: 0.5em 0 0 #62ff00, -0.09em -0.07em 0 #62ff002f,
+      0.025em 0.04em 0 #62ff0088;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #62ff00, 0.7em 0.035em 0 #62ff002f,
+      -0.05em -0.05em 0 #62ff0088;
+  }
+  49% {
+    text-shadow: 0em 0em 0 #62ff00, 0.025em 0em 0 #62ff002f,
+      0em -0.05em 0 #62ff00;
+  }
+  50% {
+    text-shadow: 20em 0.035em 0 #62ff00, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0088;
+  }
+  51% {
+    text-shadow: 0em 0.035em 0 #62ff00, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0088;
+  }
+   52% {
+    text-shadow: 0em 10em 0 #62ff006e, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0020;
+  }
+  53% {
+    text-shadow: 0em 0.035em 0 #62ff00, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0047;
+  }
+   
+ 
+  55% {
+    text-shadow: 0em 0.035em 0 #62ff00, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0088;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #ff0000, 0.03em 0 0 #62ff002f,
+      0 -0.04em 0 #62ff0088;
+  }
+  100% {
+    text-shadow: -2em 0 2 #00c403, 2em 0.6em 0 #62ff002f,
+      -0.04em -0.025em 0 #62ff0088;
+  }
+}
